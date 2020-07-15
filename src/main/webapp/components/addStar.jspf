@@ -1,0 +1,70 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New &#9733;</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="Controller?command=SendStar" method="post">
+                    <p>You have ${sessionScope.user.stars} out of 5 stars remaining.</p>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Recipient:</label>
+                        <input type="text" class="form-control" id="recipient-name" name="receiver" value="<c:out value='${receiverPrev}'/>">
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Collaboration" id="tags_Collaboration" name="tags">
+                            <label class="form-check-label" for="tags_Collaboration">Collaboration</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Clientfirst" id="tags_Clientfirst" name="tags">
+                            <label class="form-check-label" for="tags_Clientfirst">Client first</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Entrepreneurship" id="tags_Entrepreneurship" name="tags">
+                            <label class="form-check-label" for="tags_Entrepreneurship">Entrepreneurship</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="MoveFaster" id="tags_MoveFaster" name="tags">
+                            <label class="form-check-label" for="tags_MoveFaster">Move Faster</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Actsmarter" id="tags_Actsmarter" name="tags">
+                            <label class="form-check-label" for="tags_Actsmarter">Act smarter</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Gofurther" id="tags_Gofurther" name="tags">
+                            <label class="form-check-label" for="tags_Gofurther">Go further</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Besure" id="tags_Besure" name="tags">
+                            <label class="form-check-label" for="tags_Besure">Be sure</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Teamspirit" id="tags_Teamspirit" name="tags">
+                            <label class="form-check-label" for="tags_Teamspirit">Team spirit</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Officespirit" id="tags_Officespirit" name="tags">
+                            <label class="form-check-label" for="tags_Officespirit">Office spirit</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Message:</label>
+                        <textarea class="form-control" id="message-text" name="message" value="<c:out value='${message}'/>"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-primary" value="Send star">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<header>
+    <img id="logo" src="static/media/logo7.PNG">
+    <ul>
+        <li>
+            <form action="Controller?command=Filter" method="post">
+                <input type="text" id="searchBar" list="searchResults" name="filter">
+                <input id="submitButton" type="submit" class="btn btn-primary" value="search">
+
+                <datalist id="searchResults"> <!-- here all possible values in the search bar are listed -->
+                    <!-- tags: -->
+                    <option value="Integrity">
+                    <option value="Curiosity">
+                    <option value="Collaboration">
+                    <option value="Client first">
+                    <option value="Entrepreneurship">
+                    <option value="Move Faster">
+                    <option value="Act smarter">
+                    <option value="Go further">
+                    <option value="Be sure">
+                    <option value="Team spirit">
+                    <option value="Office spirit">
+                </datalist>
+            </form>
+        </li>
+        <li>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">new &#9733;</button>
+        </li>
+        <li><a href="Controller?command=ShowOverview">Overview</a></li>
+        <li><a href="Controller?command=ShowProfile">My profile</a></li>
+        <li><a href="Controller?command=LogOut">Log out</a></li>
+        <c:if test="${user.role eq 'ADMIN'}">
+        <li><a href="Controller?command=ShowAdmin">Admin</a></li>
+        <li><a href="Controller?command=ShowStatistics">Statistieken</a></li>
+        </c:if>
+    </ul>
+
+</header>
